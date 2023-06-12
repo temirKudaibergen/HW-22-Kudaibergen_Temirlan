@@ -20,3 +20,4 @@ public class UsersModel: NSManagedObject {
         return NSFetchRequest<UsersModel>(entityName: "UsersModel")
     }
 }
+

@@ -27,7 +27,7 @@ final class CoreDataManager: CoreDataService {
     private var users: [UsersModel]?
     
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "HW-22-Kudaibergen_Temirlan")
+        let container = NSPersistentContainer(name: "HW_22_Kudaibergen_Temirlan")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

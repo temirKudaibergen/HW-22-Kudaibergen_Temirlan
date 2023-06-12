@@ -31,7 +31,7 @@ final class DetailView: UIView {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 75
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "")
+        imageView.image = UIImage(named: "avatar")
         return imageView
     }()
     
@@ -173,38 +173,39 @@ final class DetailView: UIView {
     }
     
     private func setupLayout() {
+        
         userAvatar.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(200)
-            $0.centerX.equalTo(center)
+            $0.top.equalToSuperview().offset(200)
+            $0.centerX.equalToSuperview()
             $0.width.equalTo(150)
             $0.height.equalTo(150)
         }
-        
+
         mainStack.snp.makeConstraints {
-            $0.top.equalTo(userAvatar.snp.bottom).inset(50)
-            $0.left.equalToSuperview().inset(30)
-            $0.right.equalToSuperview().inset(30)
-            $0.bottom.equalToSuperview().inset(300)
+            $0.top.equalTo(userAvatar.snp.bottom).offset(50)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
+            $0.bottom.equalToSuperview().offset(-300)
         }
-        
+
         personImageView.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(30)
         }
-        
+
         calendarImageView.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(30)
         }
-        
+
         genderImageView.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(30)
         }
-        
+
         editSaveButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(50)
-            $0.right.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().offset(50)
+            $0.trailing.equalToSuperview().offset(-18)
             $0.width.equalTo(100)
             $0.height.equalTo(35)
         }
