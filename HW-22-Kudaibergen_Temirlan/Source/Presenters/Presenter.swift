@@ -25,6 +25,7 @@ final class Presenter: PresenterInput {
 //    MARK: Properties
     
     weak var view: PresenterOutput?
+    
     private var coreDataService: CoreDataService
     
 //    MARK: Initilizer

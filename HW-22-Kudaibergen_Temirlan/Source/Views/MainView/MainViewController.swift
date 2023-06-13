@@ -13,11 +13,12 @@ protocol MainViewControllerDelegate: AnyObject {
     func addUsers(nameUser: String)
 }
 
-class MainViewController: UIViewController, MainViewControllerDelegate, PresenterOutput {
+final class MainViewController: UIViewController, MainViewControllerDelegate, PresenterOutput {
 
 //    MARK: Properties
     
     var presenter: PresenterInput?
+    
     var mainView = MainView()
     
     private lazy var tableView: UITableView = {

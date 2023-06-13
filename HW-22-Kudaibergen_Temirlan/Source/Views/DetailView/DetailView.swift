@@ -24,7 +24,9 @@ final class DetailView: UIView {
             genderTextField.text = userInfo?.gender
         }
     }
+    
     weak var delegate: PresenterInput?
+    
     private var isChangeUserFields = false
     
     private lazy var userAvatar: UIImageView = {
@@ -51,7 +53,8 @@ final class DetailView: UIView {
     
     private lazy var personImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.image = UIImage(systemName: "person.fill")?.withTintColor(.black,
+                                                                            renderingMode: .alwaysOriginal)
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         return imageView
@@ -73,7 +76,8 @@ final class DetailView: UIView {
     
     private lazy var calendarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "calendar")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.image = UIImage(systemName: "calendar")?.withTintColor(.black,
+                                                                         renderingMode: .alwaysOriginal)
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         return imageView
@@ -96,7 +100,8 @@ final class DetailView: UIView {
     
     private lazy var genderImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.2.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.image = UIImage(systemName: "person.2.fill")?.withTintColor(.black,
+                                                                              renderingMode: .alwaysOriginal)
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         return imageView
@@ -106,7 +111,6 @@ final class DetailView: UIView {
         let textField = UITextField()
         textField.isEnabled = false
         textField.placeholder = "Gender"
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -213,7 +217,9 @@ final class DetailView: UIView {
 }
 
 extension DetailView: UITextFieldDelegate {
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField,
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
         if (calendarDataTextField.text?.count == 2) || (calendarDataTextField.text?.count == 5) {
             if !(string == "") {
                 calendarDataTextField.text = (calendarDataTextField.text)! + ""

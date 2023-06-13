@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainView: UIView {
+final class MainView: UIView {
     
 //    MARK: Properties
     
@@ -51,7 +51,6 @@ class MainView: UIView {
     }
     
     private func setupLayout() {
-        
         textField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(150)
             $0.leading.equalToSuperview().offset(30)
