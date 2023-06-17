@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 import SnapKit
 
 protocol MainViewControllerDelegate: AnyObject {
@@ -94,7 +93,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let detailViewController = DetailViewController()
         detailViewController.detailView.userInfo = presenter?.getUser(indexPath.row)
         detailViewController.detailView.delegate = presenter
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        self.navigationController?.pushViewController(detailViewController, animated: false)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

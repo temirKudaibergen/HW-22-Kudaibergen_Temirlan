@@ -31,7 +31,7 @@ final class DetailView: UIView {
     
     private lazy var userAvatar: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 75
+        imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "avatar")
         return imageView
@@ -181,8 +181,8 @@ final class DetailView: UIView {
         userAvatar.snp.makeConstraints {
             $0.top.equalToSuperview().offset(200)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(150)
-            $0.height.equalTo(150)
+            $0.width.equalTo(190)
+            $0.height.equalTo(200)
         }
 
         mainStack.snp.makeConstraints {
@@ -216,19 +216,4 @@ final class DetailView: UIView {
     }
 }
 
-extension DetailView: UITextFieldDelegate {
-    public func textField(_ textField: UITextField,
-                          shouldChangeCharactersIn range: NSRange,
-                          replacementString string: String) -> Bool {
-        if (calendarDataTextField.text?.count == 2) || (calendarDataTextField.text?.count == 5) {
-            if !(string == "") {
-                calendarDataTextField.text = (calendarDataTextField.text)! + ""
-            }
-            guard let text = textField.text?.count else { return false }
-            return !(text > 9 && (string.count) > range.length)
-        }
-        else {
-            return true
-        }
-    }
-}
+extension DetailView: UITextFieldDelegate { }
